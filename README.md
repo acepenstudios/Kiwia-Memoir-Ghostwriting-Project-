@@ -11,12 +11,6 @@ The project begins with a discovery process designed to understand the Interview
 
 Ace Pen Studio approaches each memoir as an individual editorial engagement. The writing process is shaped around the person whose story is being documented, the experiences they wish to share and what they hope the finished book will achieve.
 
-### Explore the project
-
-For information about the discovery consultation, proposed process, fees and consultation request form, please visit:
-
-**[Memoir & Ghostwriting Project – Ace Pen Studio](https://acepenstudios.github.io/Kiwia-Memoir-Ghostwriting-Project-/)**
-
 ### About Ace Pen Studio
 
 Ace Pen Studio is a consultancy studio and creative hub where stories are articulated and visions executed.
