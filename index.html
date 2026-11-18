@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ace Pen Studio — project discovery and preliminary engagement information for a memoir and ghostwriting project.">
+  <meta name="theme-color" content="#171717">
+  <title>Memoir & Ghostwriting Project | Ace Pen Studio</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #686868;
+      --paper: #fbfaf8;
+      --white: #fff;
+      --line: #e5e2dc;
+      --soft: #f1efeb;
+      --accent: #a78a62;
+      --max: 900px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .sans, button, input, select, textarea, .eyebrow, .nav, .meta, .form-note, label, .footer, .button {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .topbar {
+      background: var(--ink);
+      color: var(--white);
+      padding: 15px 24px;
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand { font: 700 13px Arial, sans-serif; letter-spacing: .19em; text-transform: uppercase; }
+    .top-note { color: #c9c5be; font: 11px Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 76px 24px 68px;
+    }
+    .hero-inner { max-width: var(--max); margin: auto; }
+    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { max-width: 720px; margin: 16px 0 18px; font-size: clamp(38px, 7vw, 66px); line-height: 1.04; font-weight: 400; letter-spacing: -.035em; }
+    .hero p { max-width: 660px; margin: 0; color: var(--muted); font-size: 18px; }
+    .hero-rule { width: 58px; height: 2px; background: var(--accent); margin-top: 30px; }
+    .nav { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .nav-inner { max-width: var(--max); margin: auto; padding: 12px 24px; display: flex; flex-wrap: wrap; gap: 10px 24px; }
+    .nav a { text-decoration: none; color: var(--muted); font-size: 12px; }
+    .nav a:hover { color: var(--ink); }
+    main { max-width: var(--max); margin: auto; padding: 28px 24px 80px; }
+    section { padding: 43px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+    .section-head { display: grid; grid-template-columns: 54px 1fr; gap: 14px; align-items: start; margin-bottom: 22px; }
+    .number { color: var(--accent); font: 12px Arial, sans-serif; letter-spacing: .1em; padding-top: 9px; }
+    h2 { margin: 0; font-size: clamp(26px, 4vw, 35px); line-height: 1.2; font-weight: 400; letter-spacing: -.02em; }
+    h3 { margin: 24px 0 8px; font-size: 19px; font-weight: 400; }
+    p { margin: 10px 0; }
+    .muted { color: var(--muted); }
+    .intro { max-width: 760px; font-size: 17px; }
+    .prompt-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+    .prompt { background: var(--white); border: 1px solid var(--line); padding: 19px 20px; }
+    .prompt h3 { margin: 0 0 9px; font-size: 17px; }
+    .prompt ul { margin: 0; padding-left: 19px; color: var(--muted); font: 13px/1.7 Arial, sans-serif; }
+    .fee-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 22px 0; }
+    .fee-card { border: 1px solid var(--line); background: var(--white); padding: 22px; }
+    .fee-card.featured { border-top: 3px solid var(--accent); }
+    .fee-label { font: 700 11px Arial, sans-serif; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+    .fee-amount { display: block; margin: 7px 0 4px; font: 400 30px Georgia, serif; }
+    .fee-card p { color: var(--muted); font: 13px/1.6 Arial, sans-serif; }
+    .callout { background: var(--soft); padding: 19px 22px; margin: 22px 0; border-left: 2px solid var(--accent); }
+    .callout strong { font-family: Arial, sans-serif; font-size: 13px; }
+    .callout p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .schedule { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--white); }
+    .schedule th, .schedule td { text-align: left; padding: 14px 16px; border: 1px solid var(--line); }
+    .schedule th { background: var(--soft); font: 700 11px Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+    .schedule td { font-size: 15px; }
+    .steps { list-style: none; counter-reset: steps; padding: 0; margin: 20px 0; }
+    .steps li { counter-increment: steps; position: relative; padding: 0 0 20px 44px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .steps li::before { content: counter(steps, decimal-leading-zero); position: absolute; left: 0; top: 2px; color: var(--accent); font: 12px Arial, sans-serif; }
+    .steps strong { display: block; font-size: 17px; font-weight: 400; }
+    .steps span { display: block; color: var(--muted); font: 13px/1.6 Arial, sans-serif; margin-top: 4px; }
+    .form-wrap { background: var(--white); border: 1px solid var(--line); padding: clamp(20px, 4vw, 36px); margin-top: 20px; }
+    .form-intro { color: var(--muted); font: 14px/1.7 Arial, sans-serif; margin-bottom: 26px; }
+    fieldset { border: 0; padding: 0; margin: 0 0 28px; }
+    legend { width: 100%; padding: 0 0 12px; margin-bottom: 16px; border-bottom: 1px solid var(--line); font-size: 19px; }
+    .field { margin: 0 0 17px; }
+    label.field-label { display: block; margin-bottom: 7px; font-size: 12px; font-weight: 700; color: #333; }
+    input[type="text"], input[type="email"], textarea, select {
+      display: block; width: 100%; border: 1px solid #d7d3cc; border-radius: 0; background: #fff; color: var(--ink); padding: 12px 13px; font-size: 14px; min-height: 45px;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { outline: 2px solid #c4ad8e; outline-offset: 1px; }
+    .choice-list { display: grid; gap: 10px; }
+    .choice {
+      display: flex; align-items: flex-start; gap: 11px; padding: 13px 14px; border: 1px solid var(--line); cursor: pointer; font: 13px/1.5 Arial, sans-serif;
+    }
+    .choice:has(input:checked) { border-color: var(--accent); background: #faf8f4; }
+    .choice input { margin-top: 3px; accent-color: var(--ink); flex: 0 0 auto; }
+    .choice strong { display: block; color: var(--ink); }
+    .choice small { display: block; color: var(--muted); margin-top: 2px; }
+    .check-list { display: grid; gap: 14px; }
+    .check { display: flex; align-items: flex-start; gap: 11px; color: #454545; font: 13px/1.65 Arial, sans-serif; }
+    .check input { margin-top: 4px; accent-color: var(--ink); flex: 0 0 auto; }
+    .check a { text-underline-offset: 3px; }
+    .hidden { display: none !important; }
+    .fee-summary { background: var(--soft); padding: 15px 17px; font: 13px/1.7 Arial, sans-serif; margin: 18px 0 22px; }
+    .fee-summary strong { color: var(--ink); }
+    .submit-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 25px; }
+    button { border: 0; background: var(--ink); color: var(--white); padding: 15px 23px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+    button:hover { background: #393939; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .form-note { color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .footer { background: var(--ink); color: var(--white); padding: 34px 24px; }
+    .footer-inner { max-width: var(--max); margin: auto; display: flex; justify-content: space-between; gap: 20px; align-items: end; }
+    .footer-brand { font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: 12px; }
+    .footer-tag { color: #c9c5be; font: italic 13px Georgia, serif; margin-top: 7px; }
+    .footer-small { color: #aaa; font-size: 10px; text-align: right; }
+    @media (max-width: 640px) {
+      .hero { padding: 55px 21px 48px; }
+      main { padding: 15px 20px 55px; }
+      .prompt-grid, .fee-grid { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 35px 1fr; gap: 8px; }
+      .schedule th, .schedule td { padding: 11px 9px; font-size: 12px; }
+      .footer-inner { align-items: start; flex-direction: column; }
+      .footer-small { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Ace Pen Studio</div>
+      <div class="top-note">Literary · Editorial · Ghostwriting</div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Memoir &amp; Ghostwriting Project</div>
+      <h1>Preserving a life.<br>Giving it a story.</h1>
+      <p>Project discovery and preliminary engagement information for the proposed memoir documenting your father's life.</p>
+      <div class="hero-rule"></div>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Page navigation">
+    <div class="nav-inner">
+      <a href="#overview">Overview</a><a href="#discovery">Discovery</a><a href="#fees">Fees</a><a href="#process">Process</a><a href="#confirmation">Confirm</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <div class="section-head"><div class="number">01 /</div><h2>Welcome</h2></div>
+      <div class="intro">
+        <p>Thank you for considering Ace Pen Studio to document your father's life story.</p>
+        <p>Based on your initial enquiry, the proposed direction is a chronological life-story memoir: a clear, engaging account tracing his journey from his early years through the experiences and milestones that have shaped his life.</p>
+        <p>Ace Pen Studio proposes a hybrid interview-and-transcription approach, supported by editorial development and professional ghostwriting. This page explains the discovery process, consultation arrangements, professional fees and the steps towards commissioning the book.</p>
+      </div>
+    </section>
+
+    <section id="discovery">
+      <div class="section-head"><div class="number">02 /</div><h2>The discovery consultation</h2></div>
+      <p class="intro">The first stage is a one-hour conversation with the ghostwriter. Its purpose is to understand the Interview Subject, the motivation behind the book and the intended outcome of the project.</p>
+      <div class="prompt-grid">
+        <article class="prompt"><h3>Background &amp; early life</h3><ul><li>Where was he born and raised?</li><li>What was his family background and childhood like?</li><li>What shaped his formative years?</li></ul></article>
+        <article class="prompt"><h3>Education &amp; development</h3><ul><li>What was his educational journey?</li><li>Who and what influenced him?</li><li>Which decisions shaped his life?</li></ul></article>
+        <article class="prompt"><h3>Career &amp; life experiences</h3><ul><li>What has his professional and personal journey looked like?</li><li>What were his achievements and challenges?</li><li>What were the major turning points?</li></ul></article>
+        <article class="prompt"><h3>Family &amp; personal life</h3><ul><li>What role has family played in his life?</li><li>Which relationships matter to his story?</li><li>What personal experiences should be documented?</li></ul></article>
+        <article class="prompt"><h3>Reflections &amp; legacy</h3><ul><li>What does he consider his greatest accomplishments?</li><li>What lessons has life taught him?</li><li>What should future generations remember?</li></ul></article>
+        <article class="prompt"><h3>The book</h3><ul><li>What should the book achieve?</li><li>Who is its intended readership?</li><li>What level of detail is envisaged?</li><li>Are photographs or documents available?</li></ul></article>
+      </div>
+      <div class="callout"><strong>Why we hold this conversation</strong><p>The discovery conversation will form part of the ghostwriter's working reference materials. It will help establish the narrative direction, identify important periods in the Interview Subject's life and guide subsequent interviews and manuscript development. It is a preliminary discovery exercise, not the commencement of the full ghostwriting assignment.</p></div>
+      <h3>Participation and recording</h3>
+      <p>The Interview Subject — your father, whose life is to be documented — is expected to participate personally in the discovery consultation. You are welcome to join the conversation.</p>
+      <p>The consultation is intended to be audio-recorded for transcription and professional reference purposes. The recording will only begin after the Interview Subject has received an explanation and given his own informed consent. If he does not consent, the consultation can proceed without recording, with notes taken only if he agrees.</p>
+    </section>
+
+    <section id="fees">
+      <div class="section-head"><div class="number">03 /</div><h2>Consultation arrangements &amp; fees</h2></div>
+      <p>The discovery consultation may take place virtually or in person. The same appointment dates and times are available for either format.</p>
+      <div class="fee-grid">
+        <div class="fee-card"><div class="fee-label">Option A · Virtual</div><span class="fee-amount">TZS 25,000</span><p>One-hour consultation via an agreed online meeting platform. Payment is made directly to the ghostwriter's designated mobile payment number after the consultation. Payment details will be provided directly.</p></div>
+        <div class="fee-card"><div class="fee-label">Option B · In person</div><span class="fee-amount">TZS 30,000</span><p>One-hour consultation at a mutually agreed location in Dar es Salaam. The client proposes the venue. Payment is required in advance, before the meeting.</p></div>
+      </div>
+      <div class="callout"><strong>Appointment confirmation</strong><p>All appointments are subject to confirmation by Ace Pen Studio. Once the selected slot is confirmed, the studio will send a calendar invitation and the relevant consultation invoice. A requested slot is not booked until APS confirms it.</p></div>
+      <h3>Project assessment &amp; proposal development</h3>
+      <p>Following the discovery consultation, Ace Pen Studio will assess the project and prepare a formal proposal setting out the recommended editorial direction, ghostwriting methodology, anticipated manuscript structure, scope, deliverables, schedule, responsibilities and financial arrangements for the proposed ghostwriting assignment.</p>
+      <div class="fee-card featured">
+        <div class="fee-label">Separate professional fee · Project proposal</div>
+        <span class="fee-amount">TZS 250,000</span>
+        <p><strong>Initial instalment — TZS 125,000 (50%)</strong><br>Payable when the proposal is commissioned and before development begins.</p>
+        <p><strong>Final instalment — TZS 125,000 (50%)</strong><br>Payable upon approval of the completed proposal.</p>
+        <p>The proposal fee covers professional assessment, planning and preparation. It is separate from the eventual ghostwriting fee and is not an advance payment towards manuscript writing.</p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-head"><div class="number">04 /</div><h2>What happens next</h2></div>
+      <ol class="steps">
+        <li><strong>Discovery consultation</strong><span>A one-hour conversation with the Interview Subject and commissioning client, subject to the consent arrangements described above.</span></li>
+        <li><strong>Project assessment and proposal</strong><span>Once commissioned and the initial TZS 125,000 instalment is paid, APS develops the project proposal.</span></li>
+        <li><strong>Proposal review and approval</strong><span>The completed proposal is submitted for review. The remaining TZS 125,000 is payable upon approval.</span></li>
+        <li><strong>Client Engagement Agreement</strong><span>After proposal approval and settlement of the proposal fee, APS prepares an agreement covering the full ghostwriting fees, scope, deliverables, schedule, responsibilities, intellectual property and other terms.</span></li>
+        <li><strong>Project commencement</strong><span>The ghostwriting assignment begins after the agreement is executed and the agreed commencement and payment requirements are met. January 2027 is the proposed window for initial project activities, subject to the approved schedule.</span></li>
+      </ol>
+    </section>
+
+    <section id="confirmation">
+      <div class="section-head"><div class="number">05 /</div><h2>Consultation confirmation</h2></div>
+      <p class="intro">Please provide the details below, select your preferred appointment and review the acknowledgements before submitting. Your submission is a request for an appointment; it is not a booking confirmation.</p>
+
+      <div class="form-wrap">
+        <form id="bookingForm" action="https://formspree.io/f/mzerrqno" method="POST">
+          <input type="hidden" name="project" value="Memoir and Ghostwriting Project — Ace Pen Studio">
+          <input type="hidden" name="proposal_fee_acknowledged" value="The commissioning client acknowledges the TZS 250,000 proposal development fee, payable in two instalments of TZS 125,000.">
+          <fieldset>
+            <legend>01. Your details</legend>
+            <div class="field"><label class="field-label" for="clientName">Commissioning client's full name *</label><input id="clientName" name="commissioning_client_name" type="text" value="Egejn Kiwia" required></div>
+            <div class="field"><label class="field-label" for="clientEmail">Email address *</label><input id="clientEmail" name="email" type="email" placeholder="you@example.com" required></div>
+            <div class="field"><label class="field-label" for="clientPhone">Mobile number *</label><input id="clientPhone" name="phone" type="text" placeholder="Include country code where possible" required></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>02. Interview Subject's details</legend>
+            <div class="field"><label class="field-label" for="subjectName">Interview Subject's full name *</label><input id="subjectName" name="interview_subject_full_name" type="text" placeholder="Enter your father's full name" required></div>
+            <div class="field"><label class="field-label" for="subjectPreferred">Interview Subject's preferred name *</label><input id="subjectPreferred" name="interview_subject_preferred_name" type="text" placeholder="How does he prefer to be addressed?" required></div>
+            <div class="field"><label class="field-label" for="bookAddress">Preferred form of address in the book (optional)</label><input id="bookAddress" name="preferred_form_of_address_in_book" type="text" placeholder="For example, his full name, a title or another form"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>03. Consultation preference</legend>
+            <div class="field"><label class="field-label">Choose your consultation format *</label>
+              <div class="choice-list">
+                <label class="choice"><input type="radio" name="consultation_mode" value="Virtual — TZS 25,000" required><span><strong>Virtual — TZS 25,000</strong><small>Payment is made to the ghostwriter's designated mobile number after the call.</small></span></label>
+                <label class="choice"><input type="radio" name="consultation_mode" value="In person — TZS 30,000" required><span><strong>In person — TZS 30,000</strong><small>Payment is required in advance. Please suggest a meeting location in Dar es Salaam.</small></span></label>
+              </div>
+            </div>
+            <div class="field"><label class="field-label">Select one preferred date and time *</label>
+              <div class="choice-list">
+                <label class="choice"><input type="radio" name="preferred_appointment" value="Monday, 30 November 2026, 10:00 AM–11:00 AM" required><span><strong>Monday, 30 November 2026</strong><small>10:00 AM – 11:00 AM</small></span></label>
+                <label class="choice"><input type="radio" name="preferred_appointment" value="Tuesday, 1 December 2026, 12:00 PM–1:00 PM" required><span><strong>Tuesday, 1 December 2026</strong><small>12:00 PM – 1:00 PM</small></span></label>
+                <label class="choice"><input type="radio" name="preferred_appointment" value="Wednesday, 2 December 2026, 4:00 PM–5:00 PM" required><span><strong>Wednesday, 2 December 2026</strong><small>4:00 PM – 5:00 PM</small></span></label>
+              </div>
+            </div>
+            <div class="field hidden" id="venueField"><label class="field-label" for="venue">Suggested meeting location in Dar es Salaam *</label><textarea id="venue" name="suggested_in_person_venue" placeholder="Please suggest a venue or location"></textarea></div>
+            <div class="field"><label class="field-label" for="availabilityNotes">Additional scheduling information (optional)</label><textarea id="availabilityNotes" name="scheduling_notes" placeholder="Any details that may help us confirm the appointment"></textarea></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>04. Participation, recording &amp; acknowledgements</legend>
+            <div class="callout"><strong>The Interview Subject must participate.</strong><p>Your father is expected to join the discovery consultation. He will be asked directly for his own consent before any audio recording begins. Your confirmation below does not replace his consent.</p></div>
+            <div class="check-list">
+              <label class="check"><input type="checkbox" name="participation_acknowledgement" value="Agreed" required><span>I confirm that the Interview Subject is aware of the proposed memoir project and is expected to participate personally in the discovery consultation.</span></label>
+              <label class="check"><input type="checkbox" name="recording_acknowledgement" value="Understood; Interview Subject's direct consent still required" required><span>I understand that the consultation is intended to be audio-recorded for transcription and professional reference, but recording will only begin after the Interview Subject has received an explanation and given his own informed consent. If he does not consent, the consultation may proceed without recording, with notes taken only if he agrees.</span></label>
+              <label class="check"><input type="checkbox" name="commercial_terms_acceptance" value="Accepted" required><span>I have read and agree to the preliminary engagement process and fees: TZS 25,000 for a virtual consultation or TZS 30,000 for an in-person consultation, and the separate TZS 250,000 project proposal fee, payable as TZS 125,000 before proposal development and TZS 125,000 upon approval of the completed proposal. I understand that the full ghostwriting fee will be quoted separately in the proposal.</span></label>
+              <label class="check"><input type="checkbox" name="client_privacy_consent" value="Consented to processing of commissioning client's information" required><span>I have read the data privacy information below and consent to Ace Pen Studio collecting and using my personal information for appointment administration, project communication and the stated preliminary project purposes. I understand that the Interview Subject’s name and preferred form of address are also being submitted for identification and consultation coordination, and that my confirmation does not give consent on his behalf for audio recording or the collection of his substantive life-story information.</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>05. Data privacy information</legend>
+            <p class="form-note">Ace Pen Studio will use the information submitted here to administer the consultation, communicate with you, identify the Interview Subject and assess the proposed memoir project. If you proceed beyond discovery, relevant information may also be used for proposal development and, subject to a separate engagement, project delivery.</p>
+            <p class="form-note">Please do not submit sensitive personal details about the Interview Subject or other family members in this form. Those details should be discussed directly with the ghostwriter only where relevant and after the appropriate information and consent arrangements have been explained.</p>
+            <p class="form-note">The form is configured to use Formspree to transmit submissions to Ace Pen Studio. Before publishing, APS must review Formspree's current privacy and data-processing terms and update this notice with the appropriate provider information and links. Access to submissions should be restricted to people who need the information for this project. APS should retain submissions only for as long as necessary for the stated purposes or as required by applicable law.</p>
+            <p class="form-note">The Interview Subject will be asked separately for his own consent before recording and before his personal information is collected for substantive memoir work. You may contact Ace Pen Studio to ask about the handling of information submitted through this form.</p>
+          </fieldset>
+
+          <div class="fee-summary" id="feeSummary"><strong>Selected consultation fee:</strong> Please choose virtual or in-person above.<br><strong>Separate proposal development fee:</strong> TZS 250,000 (TZS 125,000 to commission; TZS 125,000 upon approval).</div>
+          <div class="submit-row">
+            <button type="submit" id="submitButton">Submit consultation request</button>
+            <span class="form-note">APS will review your preferred slot and contact you to confirm availability. A calendar invitation and consultation invoice will follow confirmation.</span>
+          </div>
+          <p id="formMessage" class="form-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-brand">Ace Pen Studio</div><div class="footer-tag">Where your stories are articulated and visions executed.</div></div>
+      <div class="footer-small">Literary &amp; Editorial · Project Development · Ghostwriting</div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('bookingForm');
+    const venueField = document.getElementById('venueField');
+    const venueInput = document.getElementById('venue');
+    const feeSummary = document.getElementById('feeSummary');
+    const submitButton = document.getElementById('submitButton');
+    const formMessage = document.getElementById('formMessage');
+
+    function updateForm() {
+      const mode = form.querySelector('input[name="consultation_mode"]:checked')?.value || '';
+      const isInPerson = mode.startsWith('In person');
+      venueField.classList.toggle('hidden', !isInPerson);
+      venueInput.required = isInPerson;
+      const fee = mode.startsWith('Virtual') ? 'TZS 25,000' : mode.startsWith('In person') ? 'TZS 30,000' : 'Please choose virtual or in-person above';
+      feeSummary.innerHTML = `<strong>Selected consultation fee:</strong> ${fee}.<br><strong>Separate proposal development fee:</strong> TZS 250,000 (TZS 125,000 to commission; TZS 125,000 upon approval).`;
+    }
+    form.querySelectorAll('input[name="consultation_mode"]').forEach(input => input.addEventListener('change', updateForm));
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting…';
+      formMessage.textContent = '';
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.reset();
+          updateForm();
+          formMessage.textContent = 'Thank you. Your consultation request has been submitted. Ace Pen Studio will contact you to confirm the appointment. Your slot is not booked until APS confirms it.';
+        } else {
+          formMessage.textContent = 'Your request could not be submitted. Please try again or contact Ace Pen Studio directly.';
+        }
+      } catch (error) {
+        formMessage.textContent = 'There was a connection problem. Please try again or contact Ace Pen Studio directly.';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit consultation request';
+      }
+    });
+    updateForm();
+  </script>
+</body>
+</html>
